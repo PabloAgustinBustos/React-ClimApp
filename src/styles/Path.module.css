@@ -1,0 +1,28 @@
+.path{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: bisque;
+
+    animation-name: movement;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+
+    visibility: hidden;
+}
+
+@keyframes movement {
+    0%{
+        top:0vh;
+    }
+    
+    50%{
+        top:95vh
+    }
+
+    100%{
+        top:0vh;
+    }
+}

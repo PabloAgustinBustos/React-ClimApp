@@ -1,0 +1,62 @@
+.container{
+    position: absolute;
+
+    width: 130px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+
+    animation-name: movement;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+}
+
+.cloud{
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 1);
+
+    border-radius: 50px;
+
+    animation-name: visibility;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 28s;
+}
+
+.cloud1{
+    position: absolute;
+    top:0;
+}
+
+.cloud2{
+    position: absolute;
+    left: 5px;
+}
+
+.cloud3{
+    position: absolute;
+    right: 5px;
+}
+
+@keyframes movement {
+    0%{
+        left:-180px;
+    }
+
+    100%{
+        left: 110%;
+    }
+}
+
+@keyframes visibility {
+    50%{
+        background-color: rgba(255, 255, 255, 1);
+    }
+    100%{
+        background-color: rgba(255, 255, 255, 0);
+    }
+}

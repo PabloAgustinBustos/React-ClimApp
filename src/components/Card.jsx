@@ -4,23 +4,40 @@ import Button from "./Button";
 
 import s from "../styles/Card.module.css";
 import { CitiesContext } from "../provider/CitiesProvider";
+import { useEffect } from "react";
+import { useRef } from "react";
 
 const Card = ({minTemp, maxTemp, cityName, img}) => {
     const [mostrar, setMostrar] = useState(true);
     const {setCities} = useContext(CitiesContext);
 
+    const ref = useRef();
+
+    useEffect(() => {
+        return () => {    
+            
+        }
+    }, []);
+
     if(mostrar){
         return (
-            <div className={s.card}>
+            <div className={`${s.card} ${s.showCard}`} ref={ref}>
                 <Button txt="x" type="close" onClose={e => {
                     e.stopPropagation();
 
-                    setCities(prev => {
-                        const newArray = prev.filter(city => city.key !== cityName);
+                    ref.current.classList.replace(s.showCard, s.removeCard);
+                    
+                    setTimeout(() => {
+                        console.log("ahora lo elimino")
 
-                        return newArray;
-                    })
-                    setMostrar(false)
+                        setCities(prev => {
+                            const newArray = prev.filter(city => city.key !== cityName);
+    
+                            return newArray;
+                        })
+
+                        setMostrar(false)
+                    }, 500);
                 }}/>
                 
                 <div className={s.containerFlex1}>

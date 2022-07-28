@@ -1,3 +1,27 @@
+@keyframes showCard {
+    /* from{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    } */
+
+    0%{
+        transform: scale(0);
+    }
+
+    70%{
+        transform: scale(1.1);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
 .card{
     width: 300px;
     height: 250px;
@@ -13,6 +37,12 @@
 
     position: relative;
     box-sizing: border-box;
+}
+
+.showCard{
+    animation-name: showCard;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
 }
 
 .card:hover{
@@ -44,4 +74,34 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+@keyframes removeCard {
+    /* from{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    } */
+
+    0%{
+        transform: scale(1);
+    }
+
+    30%{
+        transform: scale(1.1);
+    }
+
+    100%{
+        transform: scale(0);
+    }
+}
+
+.removeCard{
+    animation-name: removeCard;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
 }
